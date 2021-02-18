@@ -1,0 +1,221 @@
+* {
+    cursor: default;
+    transition: ease all .5s;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    background-image: url("../images/background_stars.png");
+    background-color: #1C2839;
+    background-size: 500px;
+    -webkit-animation: slide 120s linear infinite;
+    margin: 0;
+    text-align: center;
+    font-family: Space Grotesk, Arial, Helvetica, sans-serif;
+}
+
+#container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    transition: 2s;
+}
+
+header {
+    position: relative;
+    height: 100vh;
+    min-height: 400px;
+    user-select: none;
+    pointer-events: none;
+}
+
+header .header_moon {
+    position: absolute;
+    top: 100px;
+    left: 8%;
+    width: 20%;
+    min-width: 80px;
+    animation-duration: 7s, 30s;
+    animation-name: zoomMoon, rotation;
+    animation-iteration-count: 1, infinite;
+    animation-timing-function: ease-in-out, linear;
+}
+
+header .header_small_planet {
+    top: 100px;
+    right: 15%;
+    position: absolute;
+    width: 5%;
+    min-width: 14px;
+    animation-duration: 7s;
+    animation-name: zoomPlanet;
+    animation-timing-function: ease-in-out;
+}
+
+header .header_big_planet{
+    position: absolute;
+    width: 70%;
+    min-width: 220px;
+    max-width: 950px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 80%;
+    animation-duration: 7s;
+    animation-name: zoomBigPlanet;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    z-index: -1;
+}
+
+section {
+    border-radius: 10px;
+    padding: 80px;
+    box-sizing: border-box;
+    width: 80%;
+
+    margin: 0 auto;
+
+}
+
+section.profile img {
+    height: 80px;
+}
+
+section.skills img {
+    height: 60px;
+}
+
+section.contact img {
+    height: 50px;
+}
+
+section:nth-child(even) {
+    border-top: 10px solid #A04343;
+    border-bottom: 10px solid #A04343;
+    background-color: rgba(112, 55, 55, .9);
+}
+
+footer {
+    padding: 2rem;
+}
+
+footer img {
+    width: 18px;
+    animation-duration: 20s;
+    animation-name: rotation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+h1 {
+    color: #bbf1fa;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0;
+    padding-top: 250px;
+}
+
+h2 {
+    color: #bbf1fa;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+h3 {
+    color: #fff;
+    font-size: .7rem;
+    font-weight: 400;
+    margin: .5rem;
+}
+
+p {
+    color: #fff;
+    font-size: .8rem;
+}
+
+.greet, .greet_sub {
+    opacity: 0;
+}
+
+.ufo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 20px;
+    opacity: 0;
+    animation-timing-function: ease-out;
+}
+
+.ufo-show {
+    opacity: 1;
+}
+
+.fadeIn {
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+}
+
+@keyframes zoomBigPlanet {
+    from {
+        width: 0;
+        min-width: 0;
+        top: 50%;
+        bottom: 50%;
+    }
+}
+
+@keyframes zoomMoon {
+    from {
+        min-width: 0;
+        width: 0;
+        left: 50%;
+        top: 50%;      
+    }
+}
+
+@keyframes zoomPlanet {
+    from {
+        min-width: 0;
+        width: 0;
+        right: 50%;
+        top: 50%;
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@-webkit-keyframes slide {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -500px 0;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    section {
+        padding: 60px;
+    }
+
+    header .header_moon {
+        top: 40px;
+    }
+
+    header .header_small_planet {
+        top: 60px;
+    }
+}
